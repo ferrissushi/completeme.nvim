@@ -20,5 +20,5 @@ function M.get_correct_prompt()
         :gsub("{file_path}", M.get_file_path())
         :gsub("{line}", M.get_cursor_position().line)
         :gsub("{col}", M.get_cursor_position().col)
-    return
+    return formatted_prompt
 end
