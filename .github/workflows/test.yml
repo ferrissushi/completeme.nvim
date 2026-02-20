@@ -1,0 +1,32 @@
+name: Test
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Neovim
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Neovim
+        run: |
+          sudo add-apt-repository ppa:neovim-ppa/unstable
+          sudo apt-get update
+          sudo apt-get install -y neovim
+
+      - name: Install busted
+        run: |
+          luarocks install busted
+
+      - name: Run tests
+        run: |
+          nvim --headless -u tests/minimal_init.lua -c "PlenaryBustedDirectory tests/ {minimal_init = 'tests/minimal_init.lua'}"
