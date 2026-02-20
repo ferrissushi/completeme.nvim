@@ -3,13 +3,9 @@ local config = {}
 local default = {
     keybinding = "<TAB>",
     prompt_template = [[
-            Complete this code snippet by analyzing the codebase:
-            ```{filetype}
-            {code}
-            Cursor location: line {line}, column {col}
-            Provide a completion suggestion:
+        Complete the method inside the file {file_path} Cursor location: line {line}, column {col}
+        analyze the codebase to follow the programming rules and context.
     ]],
-    context_lines = 50,
 }
 
 function config.setup(user_config)
