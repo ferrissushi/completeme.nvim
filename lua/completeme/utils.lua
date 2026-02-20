@@ -10,4 +10,5 @@ end
 
 function M.get_file_path()
     local file_path = vim.fn.expand("%")
+    return file_path
 end
