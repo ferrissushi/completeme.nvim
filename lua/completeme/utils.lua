@@ -7,3 +7,7 @@ function M.get_cursor_position()
         col = cursor_position[2],
     }
 end
+
+function M.get_file_path()
+    local file_path = vim.fn.expand("%")
+end
