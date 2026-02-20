@@ -4,3 +4,8 @@ if vim.version().minor < 5 then
 end
 
 local completeme = require("completeme")
+
+vim.api.nvim_create_user_command("CompleteFunction", completeme.complete_function, {
+    bang = true,
+    desc = "Generate function body to clipboard",
+})
