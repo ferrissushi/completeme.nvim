@@ -9,4 +9,5 @@ function M.get_cursor_position()
 end
 
 function M.get_file_path()
+    return vim.fn.expand("%p")
 end
