@@ -4,7 +4,7 @@ local default = {
     keybinding = "<TAB>",
     prompt_template = [[
         First analyze the current state of the codebase. Then
-        What should be inside of the function at lua/completeme/utils.lua Cursor location: line 11, column 1
+        What should be inside of the function at {file_path} Cursor location: line {line}, column {col}
         analyze the codebase to follow the programming rules and context.
         just give me the code snippet that should be inside of it. without saying anything else.
     ]],
